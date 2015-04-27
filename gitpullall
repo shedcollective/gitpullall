@@ -1,0 +1,9 @@
+for dir in $(find . -type d -depth 1)
+do
+    cd $dir
+    if [ -d .git ]; then
+        git checkout develop
+        git pull origin develop
+    fi;
+    cd ../
+done
